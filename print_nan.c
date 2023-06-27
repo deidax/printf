@@ -38,10 +38,13 @@ int print_string(va_list args)
 	v = va_arg(args, char *);
 	if (v != NULL)
 	{
-		count = _put(v);
-		return (count - 1);
+		while (*v != '\0')
+		{
+			count += _putchar(*v);
+			v++;
+		}
 	}
-	return (0);
+	return (count);
 }
 /**
  * print_string - Prints a percentage character.
