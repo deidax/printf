@@ -6,13 +6,18 @@
  *
  * Description:
  *	This function prints a char
+ *
+ * Return:
+ *	number of characters printed
  */
-void print_char(va_list args)
+int print_char(va_list args)
 {
 	char v;
+	int count = 0;
 
 	v = va_arg(args, int);
-	_putchar(v);
+	count = _putchar(v);
+	return (count);
 }
 /**
  * print_string - Prints a given string.
@@ -21,8 +26,11 @@ void print_char(va_list args)
  *
  * Description:
  *     This function prints the given string to the standard output.
+ *
+ * Return:
+ * 	number of characters printed
  */
-void print_string(va_list args)
+int print_string(va_list args)
 {
 	char *v;
 

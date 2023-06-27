@@ -9,9 +9,9 @@
 #include <unistd.h>
 int _putchar(char c);
 int _put(char *str);
-void print_char(va_list args);
-void print_string(va_list args);
-void print_percentage(va_list args);
+int print_char(va_list args);
+int print_string(va_list args);
+int print_percentage(va_list args);
 int _printf(const char *format, ...);
-void (*get_format_func(char c))(va_list);
+int (*get_format_func(char c))(va_list);
 #endif
