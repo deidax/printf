@@ -31,3 +31,20 @@ int (*get_format_func(char c))(va_list)
 	}
 	return (NULL);
 }
+/**
+ * get_format - Get the length of a format string.
+ * @format: The format string.
+ *
+ * Description:
+ *   This function calculates the length of the format string @format.
+ *   If the format string is NULL, the function returns 0.
+ *
+ * Return:
+ *   The length of the format string, or 0 if @format is NULL.
+ */
+int get_format(const char * const format)
+{
+	if (format == NULL)
+		return (0);
+	return (strlen(format));
+}

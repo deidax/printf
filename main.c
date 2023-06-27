@@ -2,6 +2,6 @@
 
 int main()
 {
-	_put(NULL);
+	_printf("s", "KABBOM");
 	return (0);
 }

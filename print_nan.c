@@ -17,6 +17,7 @@ int print_char(va_list args)
 
 	v = va_arg(args, int);
 	count = _putchar(v);
+	_putchar('\n');
 	return (count);
 }
 /**
@@ -33,8 +34,14 @@ int print_char(va_list args)
 int print_string(va_list args)
 {
 	char *v;
+	int count = 0;
 
 	v = va_arg(args, char *);
 	if (v != NULL)
-		_put(v);
+	{
+		count = _put(v);
+		_put("\n");
+		return (count - 1);
+	}
+	return (0);
 }
