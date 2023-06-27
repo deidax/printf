@@ -8,7 +8,7 @@
 #include <limits.h>
 #include <unistd.h>
 int _putchar(char c);
-int put(char *str);
+int _put(char *str);
 void print_char(va_list args);
 void print_string(va_list args);
 void print_percentage(va_list args);
