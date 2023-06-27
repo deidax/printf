@@ -34,6 +34,7 @@ int print_string(va_list args)
 {
 	char *v;
 	int count = 0;
+	char *null = "(null)";
 
 	v = va_arg(args, char *);
 	if (v != NULL)
@@ -42,6 +43,14 @@ int print_string(va_list args)
 		{
 			count += _putchar(*v);
 			v++;
+		}
+	}
+	else
+	{
+		while (*null != '\0')
+		{
+			count += _putchar(*null);
+			null++;
 		}
 	}
 	return (count);

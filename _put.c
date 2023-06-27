@@ -25,6 +25,6 @@ int _put(char *str)
 		}
 		return (count);
 	}
-	count = _put("(null)\n");
+	count = _put("(null)");
 	return (count);
 }
