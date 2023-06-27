@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * put - Print a string and return the number of characters printed.
+ * _put - Print a string and return the number of characters printed.
  * @str: The input string to be printed.
  *
  * Description:
@@ -11,16 +11,18 @@
  * Return:
  *     The number of characters printed.
  */
-int _put(char *str) {
-    int count = 0;
+int _put(char *str)
+{
+	int count = 0;
 
-    if (str != NULL) {
-        while (*str != '\0') {
-            putchar(*str);
-            str++;
-            count++;
-        }
-    }
-
-    return (count);
+	if (str != NULL)
+	{
+		while (*str != '\0')
+		{
+			putchar(*str);
+			str++;
+			count++;
+		}
+	}
+	return (count);
 }
