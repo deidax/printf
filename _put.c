@@ -23,6 +23,7 @@ int _put(char *str)
 			str++;
 			count++;
 		}
+		return (count);
 	}
-	return (count);
+	_put("(null)");
 }

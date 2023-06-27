@@ -15,7 +15,7 @@
 
 void (*get_format_func(char c))(va_list)
 {
-	char opt_char[] = "cifs";
+	char opt_char[] = "cs";
 	void (*opt_cmd[])(va_list) = {
 		print_char, print_string
 	};
