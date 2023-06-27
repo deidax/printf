@@ -28,7 +28,7 @@ int print_char(va_list args)
  *     This function prints the given string to the standard output.
  *
  * Return:
- * 	number of characters printed
+ *	number of characters printed
  */
 int print_string(va_list args)
 {
