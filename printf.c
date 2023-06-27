@@ -22,13 +22,14 @@ int _printf(const char *format, ...)
 		{
 			fun_format = get_format_func(f_spec);
 			count += fun_format(args_copy);
+			i++;
 		}
 		else
 		{
 			count += _putchar(f_indicator);
 		}
-		_putchar('\n');
-		_putchar(f_indicator);
+		/*_putchar('\n');
+		_putchar(f_indicator);*/
 		i++;
 	}
 	va_end(args);

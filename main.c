@@ -2,6 +2,6 @@
 
 int main()
 {
-	_printf("%s", "KABBOM");
+	_printf("%s %c", "KABBOM", 'X');
 	return (0);
 }
