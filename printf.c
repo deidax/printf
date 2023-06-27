@@ -1,5 +1,18 @@
 #include "main.h"
-
+/**
+ * _printf - Custom printf function that prints formatted output to stdout.
+ * @format: A pointer to a format string specifying the output format.
+ * @...: Additional variadic arguments based on the format string.
+ *
+ * Description:
+ *      The _printf function prints formatted output to stdout based on the
+ *      format string and additional variadic arguments. It supports the
+ *      following format specifiers: %c (character), %s (string), and %% '%'.
+ *      The function returns the total number of characters printed to stdout.
+ *
+ * Return:
+ *      The total number of characters printed to stdout.
+ */
 int _printf(const char *format, ...)
 {
 	int num_args;
@@ -28,8 +41,6 @@ int _printf(const char *format, ...)
 		{
 			count += _putchar(f_indicator);
 		}
-		/*_putchar('\n');
-		_putchar(f_indicator);*/
 		i++;
 	}
 	va_end(args);
