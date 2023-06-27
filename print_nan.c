@@ -17,7 +17,6 @@ int print_char(va_list args)
 
 	v = va_arg(args, int);
 	count = _putchar(v);
-	_putchar('\n');
 	return (count);
 }
 /**
@@ -40,8 +39,25 @@ int print_string(va_list args)
 	if (v != NULL)
 	{
 		count = _put(v);
-		_put("\n");
 		return (count - 1);
 	}
+	return (0);
+}
+/**
+ * print_string - Prints a percentage character.
+ *
+ * @args: args to be printed
+ *
+ * Description:
+ *     This function prints the percentage symbol.
+ *
+ * Return:
+ *      number of characters printed
+ */
+int print_percentage(va_list args)
+{
+	(void) args;
+
+	_putchar('%');
 	return (0);
 }

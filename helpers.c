@@ -15,9 +15,9 @@
 
 int (*get_format_func(char c))(va_list)
 {
-	char opt_char[] = "cs";
+	char opt_char[] = "cs%";
 	int (*opt_cmd[])(va_list) = {
-		print_char, print_string
+		print_char, print_string, print_percentage
 	};
 	int i = 0;
 
