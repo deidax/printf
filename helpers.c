@@ -68,7 +68,8 @@ int get_format(const char * const format)
 int print_int_helper(int n)
 {
 	int count = 0;
-
+	if (n >= INT_MAX || n <= INT_MIN)
+		n = (long int) n;
 	if (n < 0)
 	{
 		count += _putchar('-');

@@ -6,7 +6,7 @@ int main()
 	int count = 0;
 	int len;
 	int len2;
-
+	long int l = (long int)INT_MAX + 1024;
 	len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
 
@@ -26,6 +26,14 @@ int main()
     	_count = _printf("Length:[%d, %i]\n", len2, len2);
 	printf("Len:[%d]\n", len);
     	_printf("Len:[%d]\n", len2);
+	printf("%d", l);
+	_printf("%d", l);
+	printf("\n");
+	printf("%d", INT_MIN);
+	_printf("%d", INT_MIN);
+	printf("\n");
+	printf("%i", 1024);
+	_printf("%i", 1024);
     printf("\nor: %i\n", count);
     printf("cl: %i\n", _count);
 
