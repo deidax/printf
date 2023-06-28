@@ -12,6 +12,11 @@
  *
  * Return:
  *      The total number of characters printed to stdout.
+ *
+ * Authors:
+ *	Khalil DIDA
+ *	Khadija GHADI
+ *
  */
 int _printf(const char *format, ...)
 {
