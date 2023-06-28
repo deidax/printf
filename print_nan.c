@@ -56,7 +56,7 @@ int print_string(va_list args)
 	return (count);
 }
 /**
- * print_string - Prints a percentage character.
+ * print_percentage - Prints a percentage character.
  *
  * @args: args to be printed
  *
@@ -73,3 +73,11 @@ int print_percentage(va_list args)
 	_putchar('%');
 	return (1);
 }
+int print_empty(va_list args)
+{
+        (void) args;
+
+        _putchar('\0');
+        return (-1);
+}
+

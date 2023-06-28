@@ -37,6 +37,11 @@ int _printf(const char *format, ...)
 			count += fun_format(args_copy);
 			i++;
 		}
+		else if (f_indicator == '%' && num_args == 1)
+		{
+			fun_format = get_format_func('@');
+			count += fun_format(args_copy);
+		}
 		else
 		{
 			count += _putchar(f_indicator);

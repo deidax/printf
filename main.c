@@ -12,7 +12,10 @@ int main()
 
     	count = printf("%s %c\n", NULL, 'K');
 	_count = _printf("%s %c\n", NULL, 'K');
-    printf("%i\n", count);
-    printf("_ %i\n", _count);
+	count = printf("%");
+	_count = _printf("%");
+    printf("\nor: %i\n", count);
+    printf("cl: %i\n", _count);
+
 	return (count);
 }
