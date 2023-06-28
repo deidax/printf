@@ -22,5 +22,5 @@ int (*get_format_func(char c))(va_list);
 int get_format(const char * const format);
 int print_int_helper(int n);
 int print_binary_helper(unsigned int n);
-int print_unsigned_int_helper(unsigned int n);
+int print_unsigned_helper(unsigned int n, int base);
 #endif

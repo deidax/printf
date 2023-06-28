@@ -115,26 +115,26 @@ int print_binary_helper(unsigned int n)
 	return (count);
 }
 /**
- * print_unsigned_int_helper - Prints an unsigned integer using putchar.
+ * print_unsigned_helper - Prints an unsigned integer in the specified base.
  * @n: The unsigned integer to be printed.
+ * @base: The base in which to print the number.
  *
  * Description:
- *     The print_unsigned_int function prints an unsigned integer to the
- *     standard output using the putchar function. It recursively divides
- *     the number by 10 until the quotient becomes 0, allowing it to extract
- *     and print each digit of the unsigned integer in the correct order.
+ *     The print_unsigned_helper function prints an unsigned integer @n to the
+ *     standard output using the putchar function. It recursively divides the
+ *     number by @base to extract and print each digit from right to left.
  *
  * Return:
  *     The total number of characters printed.
  */
-int print_unsigned_int_helper(unsigned int n)
+int print_unsigned_helper(unsigned int n, int base)
 {
 	int count = 0;
 
-	if (n >= 10)
+	if (n >= (unsigned int) base)
 	{
-		count += print_unsigned_int_helper(n / 10);
+		count += print_unsigned_helper((n / base), base);
 	}
-	count += _putchar((n % 10) + '0');
+	count += _putchar((n % base) + '0');
 	return (count);
 }

@@ -60,6 +60,6 @@ int print_unsigned_int(va_list args)
 	int count = 0;
 
 	v = va_arg(args, unsigned int);
-	count = print_unsigned_int_helper(v);
+	count = print_unsigned_helper(v, 10);
 	return (count);
 }
