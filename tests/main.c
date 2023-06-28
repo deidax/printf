@@ -29,8 +29,9 @@ int main()
 	printf("%d", l);
 	_printf("%d", l);
 	printf("\n");
-	printf("%d", INT_MIN);
-	_printf("%d", INT_MIN);
+	count = printf("%d", INT_MAX);
+	printf("\n");
+	_count = _printf("-> %d", INT_MAX);
 	printf("\n");
 	printf("%i", 1024);
 	_printf("%i", 1024);

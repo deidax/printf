@@ -68,15 +68,26 @@ int get_format(const char * const format)
 int print_int_helper(int n)
 {
 	int count = 0;
-	if (n >= INT_MAX || n <= INT_MIN)
-		n = (long int) n;
-	if (n < 0)
+	if (n == INT_MIN)
+	{
+		count += _putchar('-');
+		count += print_int_helper(-(n / 10));
+		count += _putchar(-(n % 10) + '0');
+	}
+	else if (n < 0)
 	{
 		count += _putchar('-');
 		n = -n;
+		count += print_int_helper(n);
 	}
-	if (n / 10)
+	else if (n / 10)
+	{
 		count += print_int_helper(n / 10);
-	count += _putchar(n % 10 + '0');
+		count += _putchar(n % 10 + '0');
+	}
+	else
+	{
+		count += _putchar(n + '0');
+	}
 	return (count);
 }
