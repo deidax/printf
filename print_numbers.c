@@ -21,3 +21,24 @@ int print_int(va_list args)
 	count = print_int_helper(v);
 	return (count);
 }
+/**
+ * print_binary - Prints an unsigned integer in binary format.
+ * @args: The argument list containing the unsigned integer.
+ *
+ * Description:
+ *     The print_binary function takes an argument list and retrieves
+ *     an unsigned integer from it. It then prints the binary representation
+ *     of the unsigned integer to the standard output using putchar.
+ *
+ * Return:
+ *     The total number of characters printed.
+ */
+int print_binary(va_list args)
+{
+	unsigned int v;
+	int count = 0;
+
+	v = va_arg(args, unsigned int);
+	count = print_binary_helper(v);
+	return (count);
+}

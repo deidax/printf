@@ -35,6 +35,9 @@ int main()
 	printf("\n");
 	printf("%i", 1024);
 	_printf("%i", 1024);
+	printf("\n");
+	printf("%b\n", 98);
+	_printf("%b\n", 98);
     printf("\nor: %i\n", count);
     printf("cl: %i\n", _count);
 

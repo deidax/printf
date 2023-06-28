@@ -35,7 +35,8 @@ int _printf(const char *format, ...)
 					f_spec == 's' ||
 					f_spec == '%' ||
 					f_spec == 'i' ||
-					f_spec == 'd'))
+					f_spec == 'd' ||
+					f_spec == 'b'))
 		{
 			fun_format = get_format_func(f_spec);
 			count += fun_format(args_copy);

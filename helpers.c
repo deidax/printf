@@ -15,14 +15,15 @@
 
 int (*get_format_func(char c))(va_list)
 {
-	char opt_char[] = "cs%@id";
+	char opt_char[] = "cs%@idb";
 	int (*opt_cmd[])(va_list) = {
 		print_char,
 		print_string,
 		print_percentage,
 		print_empty,
 		print_int,
-		print_int
+		print_int,
+		print_binary
 	};
 	int i = 0;
 
@@ -89,5 +90,26 @@ int print_int_helper(int n)
 	{
 		count += _putchar(n + '0');
 	}
+	return (count);
+}
+/**
+ * print_binary_helper - Prints the binary representation of an unsigned integer.
+ * @n: The unsigned integer to be printed in binary.
+ *
+ * Description:
+ *      The print_binary_helper function is a recursive helper function used to
+ *      print the binary representation of the given unsigned integer @n. It
+ *      divides the number by 2 recursively and prints the remainder (0 or 1)
+ *      using _putchar. The function returns the total number of characters printed.
+ *
+ * Return:
+ *      The total number of characters printed.
+ */
+int print_binary_helper(unsigned int n)
+{
+	int count = 0;
+	if (n > 1)
+		count += print_binary_helper(n / 2);
+	count += _putchar((n % 2) + '0');
 	return (count);
 }
