@@ -15,9 +15,9 @@
 
 int (*get_format_func(char c))(va_list)
 {
-	char opt_char[] = "cs%@";
+	char opt_char[] = "cs%@i";
 	int (*opt_cmd[])(va_list) = {
-		print_char, print_string, print_percentage, print_empty
+		print_char, print_string, print_percentage, print_empty, print_int
 	};
 	int i = 0;
 
@@ -47,4 +47,29 @@ int get_format(const char * const format)
 	if (format == NULL)
 		return (0);
 	return (strlen(format));
+}
+/**
+ * print_int_helper - Helper function to print an integer using putchar.
+ * @n: The integer to be printed.
+ *
+ * Description:
+ *      The print_int_helper is a helper function used by other functions
+ *      to print an integer to the standard output using the putchar function.
+ *      to print each digit of the number.
+ *
+ * Return:
+ *      The total number of characters printed.
+ */
+int print_int_helper(int n)
+{
+	int count = 0;
+	if (n < 0)
+	{
+		count += _putchar('-');
+		n = -n;
+	}
+	if (n / 10)
+		count += print_int_number_h(n);
+	count += _putchar(n%10 + '0');
+	return (count);
 }
