@@ -4,6 +4,12 @@ int main()
 {
 	int _count = 0;
 	int count = 0;
+	int len;
+	int len2;
+
+	len = _printf("Let's try to printf a simple sentence.\n");
+    len2 = printf("Let's try to printf a simple sentence.\n");
+
     count = printf("%s  %%\n", "KABOOM!!", 'X');
     _count = _printf("%s  %%\n", "KABOOM!!", 'X');
 
@@ -16,6 +22,10 @@ int main()
 	_count = _printf("%");
 	count = printf("test: %i %s %c %\n", -59, "Kaboom", '!');
 	_count = _printf("test: %i %s %c %\n", -59, "Kaboom", '!');
+	count = printf("Length:[%d, %i]\n", len, len);
+    	_count = _printf("Length:[%d, %i]\n", len2, len2);
+	printf("Len:[%d]\n", len);
+    	_printf("Len:[%d]\n", len2);
     printf("\nor: %i\n", count);
     printf("cl: %i\n", _count);
 
