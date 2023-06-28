@@ -73,11 +73,23 @@ int print_percentage(va_list args)
 	_putchar('%');
 	return (1);
 }
+/**
+ * print_empty - Prints an empty character.
+ * @args: The argument list (unused).
+ *
+ * Description:
+ *      The print_empty function is used to print an empty character ('\0')
+ *      to the standard output. The argument list is unused in this function.
+ *      It returns -1 to indicate an error since printing an empty character
+ *      has no practical use.
+ *
+ * Return:
+ *      -1 to indicate an error.
+ */
 int print_empty(va_list args)
 {
-        (void) args;
+	(void) args;
 
-        _putchar('\0');
-        return (-1);
+	_putchar('\0');
+	return (-1);
 }
-
