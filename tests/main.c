@@ -14,6 +14,8 @@ int main()
 	_count = _printf("%s %c\n", NULL, 'K');
 	count = printf("%");
 	_count = _printf("%");
+	count = printf("test: %i %s %c %\n", -59, "Kaboom", '!');
+	_count = _printf("test: %i %s %c %\n", -59, "Kaboom", '!');
     printf("\nor: %i\n", count);
     printf("cl: %i\n", _count);
 

@@ -15,9 +15,14 @@
 
 int (*get_format_func(char c))(va_list)
 {
-	char opt_char[] = "cs%@i";
+	char opt_char[] = "cs%@id";
 	int (*opt_cmd[])(va_list) = {
-		print_char, print_string, print_percentage, print_empty, print_int
+		print_char,
+		print_string,
+		print_percentage,
+		print_empty,
+		print_int,
+		print_int
 	};
 	int i = 0;
 
@@ -63,13 +68,14 @@ int get_format(const char * const format)
 int print_int_helper(int n)
 {
 	int count = 0;
+
 	if (n < 0)
 	{
 		count += _putchar('-');
 		n = -n;
 	}
 	if (n / 10)
-		count += print_int_number_h(n);
-	count += _putchar(n%10 + '0');
+		count += print_int_helper(n / 10);
+	count += _putchar(n % 10 + '0');
 	return (count);
 }
