@@ -42,3 +42,24 @@ int print_binary(va_list args)
 	count = print_binary_helper(v);
 	return (count);
 }
+/**
+ * print_unsigned_int - Prints an unsigned integer using putchar.
+ * @args: The variadic argument list containing the unsigned integer.
+ *
+ * Description:
+ *      The print_unsigned_int function is used to print an unsigned integer
+ *      to the standard output using the putchar function. It extracts each
+ *      digit of the unsigned integer and prints them individually.
+ *
+ * Return:
+ *      The total number of characters printed.
+ */
+int print_unsigned_int(va_list args)
+{
+	unsigned int v;
+	int count = 0;
+
+	v = va_arg(args, unsigned int);
+	count = print_unsigned_int_helper(v);
+	return (count);
+}

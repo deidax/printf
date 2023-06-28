@@ -38,6 +38,9 @@ int main()
 	printf("\n");
 	printf("%b\n", 98);
 	_printf("%b\n", 98);
+	printf("%u\n", -42);
+	printf("%u\n", 42);
+	_printf("%u\n", 42);
     printf("\nor: %i\n", count);
     printf("cl: %i\n", _count);
 

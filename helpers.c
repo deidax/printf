@@ -15,7 +15,7 @@
 
 int (*get_format_func(char c))(va_list)
 {
-	char opt_char[] = "cs%@idb";
+	char opt_char[] = "cs%@idbu";
 	int (*opt_cmd[])(va_list) = {
 		print_char,
 		print_string,
@@ -23,7 +23,8 @@ int (*get_format_func(char c))(va_list)
 		print_empty,
 		print_int,
 		print_int,
-		print_binary
+		print_binary,
+		print_unsigned_int
 	};
 	int i = 0;
 
@@ -111,5 +112,29 @@ int print_binary_helper(unsigned int n)
 	if (n > 1)
 		count += print_binary_helper(n / 2);
 	count += _putchar((n % 2) + '0');
+	return (count);
+}
+/**
+ * print_unsigned_int_helper - Prints an unsigned integer using putchar.
+ * @n: The unsigned integer to be printed.
+ *
+ * Description:
+ *     The print_unsigned_int function prints an unsigned integer to the
+ *     standard output using the putchar function. It recursively divides
+ *     the number by 10 until the quotient becomes 0, allowing it to extract
+ *     and print each digit of the unsigned integer in the correct order.
+ *
+ * Return:
+ *     The total number of characters printed.
+ */
+int print_unsigned_int_helper(unsigned int n)
+{
+	int count = 0;
+
+	if (n >= 10)
+	{
+		count += print_unsigned_int_helper(n / 10);
+	}
+	count += _putchar((n % 10) + '0');
 	return (count);
 }
