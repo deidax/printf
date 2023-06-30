@@ -95,10 +95,19 @@ int print_empty(va_list args)
 }
 int print_special(va_list args)
 {
-	char v;
+	char *v;
 	int count = 0;
 
-	v = va_arg(args, int v);
-	count = print_special_helper(v);
+	v = va_arg(args, char *);
+	if (v != NULL)
+	{
+		while (*v != '\0')
+		{
+			count += print_special_helper(*v);
+			v++;
+		}
+	}
+	else
+		_printf("(null)");
 	return (count);
 }
