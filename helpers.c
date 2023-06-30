@@ -188,3 +188,19 @@ int print_unsigned_helper(unsigned int n, int base, int lower_case)
 
 	return (count);
 }
+int print_special_helper(char c)
+{
+	int count = 0;
+	
+	if ((c > 0 && c < 32) || c >= 127)
+	{
+		count += _printf("\x");
+		int tmp_count += print_unsigned_helper((unsigned int) c, 16, 1);
+		if (tmp_count == 1)
+		{
+			count += tmp_count + _putchar('0');
+		}
+	}
+	count += _putchar(c);
+	return (count);
+}

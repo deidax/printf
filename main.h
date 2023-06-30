@@ -27,4 +27,5 @@ int check_spec(char f_spec);
 int print_int_helper(int n);
 int print_binary_helper(unsigned int n);
 int print_unsigned_helper(unsigned int n, int base, int lower_case);
+int print_special_helper(char c);
 #endif
