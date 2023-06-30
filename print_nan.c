@@ -98,7 +98,7 @@ int print_special(va_list args)
 	char v;
 	int count = 0;
 
-	v = va_arg(args, int);
+	v = va_arg(args, int v);
 	count = print_special_helper(v);
 	return (count);
 }

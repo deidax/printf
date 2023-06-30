@@ -20,6 +20,7 @@ int print_unsigned_int(va_list args);
 int print_unsigned_oct(va_list args);
 int print_unsigned_heX(va_list args);
 int print_unsigned_hex(va_list args);
+int print_special(va_list args);
 int _printf(const char *format, ...);
 int (*get_format_func(char c))(va_list);
 int get_format(const char * const format);
