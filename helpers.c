@@ -15,7 +15,7 @@
 
 int (*get_format_func(char c))(va_list)
 {
-	char opt_char[] = "cs%@idbuo";
+	char opt_char[] = "cs%@idbuoXx";
 	int (*opt_cmd[])(va_list) = {
 		print_char,
 		print_string,
@@ -25,7 +25,9 @@ int (*get_format_func(char c))(va_list)
 		print_int,
 		print_binary,
 		print_unsigned_int,
-		print_unsigned_oct
+		print_unsigned_oct,
+		print_unsigned_heX,
+		print_unsigned_hex
 	};
 	int i = 0;
 
@@ -119,6 +121,9 @@ int print_binary_helper(unsigned int n)
  * print_unsigned_helper - Prints an unsigned integer in the specified base.
  * @n: The unsigned integer to be printed.
  * @base: The base in which to print the number.
+ * @lower_case: if it's greater less than 0 lower characters will be used
+ * 	in hex format, if it's greater than   upper case will be used.
+ * 	if it's not hex format this variable will be ignored.
  *
  * Description:
  *     The print_unsigned_helper function prints an unsigned integer @n to the
@@ -128,14 +133,30 @@ int print_binary_helper(unsigned int n)
  * Return:
  *     The total number of characters printed.
  */
-int print_unsigned_helper(unsigned int n, int base)
+int print_unsigned_helper(unsigned int n, int base, int lower_case)
 {
 	int count = 0;
+	int r = 0;
+	char hex;
 
 	if (n >= (unsigned int) base)
 	{
-		count += print_unsigned_helper((n / base), base);
+		count += print_unsigned_helper((n / base), base, lower_case);
 	}
-	count += _putchar((n % base) + '0');
+	r = n % base;
+	if ( r < 10 )
+	{
+		(void) lower_case;
+		count += _putchar(r + '0');
+	}
+	else
+	{
+		if (lower_case > 0)
+			hex = 'A';
+		else
+			hex = 'a';
+		count += _putchar(r - 10 + hex);
+	}
+
 	return (count);
 }
