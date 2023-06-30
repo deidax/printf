@@ -17,6 +17,7 @@ int print_empty(va_list args);
 int print_int(va_list args);
 int print_binary(va_list args);
 int print_unsigned_int(va_list args);
+int print_unsigned_oct(va_list int);
 int _printf(const char *format, ...);
 int (*get_format_func(char c))(va_list);
 int get_format(const char * const format);

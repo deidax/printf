@@ -15,7 +15,7 @@
 
 int (*get_format_func(char c))(va_list)
 {
-	char opt_char[] = "cs%@idbu";
+	char opt_char[] = "cs%@idbuo";
 	int (*opt_cmd[])(va_list) = {
 		print_char,
 		print_string,
@@ -24,7 +24,8 @@ int (*get_format_func(char c))(va_list)
 		print_int,
 		print_int,
 		print_binary,
-		print_unsigned_int
+		print_unsigned_int,
+		print_unsigned_oct
 	};
 	int i = 0;
 
