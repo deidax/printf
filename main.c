@@ -46,6 +46,7 @@ int main()
 	_printf("Unsigned octal:[%o]\n", ui);
 	printf("Unsigned hexadecimal:[%x, %X]\n", ui, 10);
 	_printf("Unsigned hexadecimal:[%x, %X]\n", ui, 10);
+	print_special_helper('\n');
     printf("\nor: %i\n", count);
     printf("cl: %i\n", _count);
 

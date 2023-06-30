@@ -191,11 +191,12 @@ int print_unsigned_helper(unsigned int n, int base, int lower_case)
 int print_special_helper(char c)
 {
 	int count = 0;
-	
+	int tmp_count = 0;
+
 	if ((c > 0 && c < 32) || c >= 127)
 	{
-		count += _printf("\x");
-		int tmp_count += print_unsigned_helper((unsigned int) c, 16, 1);
+		count += _printf("\\x");
+		tmp_count += _printf("%X", (unsigned int) c);
 		if (tmp_count == 1)
 		{
 			count += tmp_count + _putchar('0');
