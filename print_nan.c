@@ -93,6 +93,22 @@ int print_empty(va_list args)
 	_putchar('\0');
 	return (-1);
 }
+/**
+ * print_special - Handles the custom conversion specifier 'S'.
+ * @args: The va_list containing the argument to be printed.
+ *
+ * Description:
+ *     The print_special function is responsible for handling the
+ *     custom conversion specifier 'S'. It takes a va_list containing the
+ *     argument to be printed and handles the formatting accordingly.
+ *     If the argument contains non-printable characters (ASCII value between
+ *     0 and 31 or greater than or equal to 127), it prints them as \x followed
+ *     by the ASCII code value in uppercase hexadecimal format (always 2
+ *     characters).
+ *
+ * Return:
+ *     The total number of characters printed.
+ */
 int print_special(va_list args)
 {
 	char *v;
