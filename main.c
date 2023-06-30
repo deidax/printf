@@ -49,6 +49,11 @@ int main()
 	print_special_helper('\n');
 	 _printf("%S\n", "\n");
 	 _printf("%S\n", "Best\nSchool");
+	 _count = _printf("%S", "\n");
+	 _count = _printf("%S", "\x01\x02\x03\x04\x05\x06\x07");
+	 printf("\n");
+	 _printf("Could you print some non-prntable characters?\n%S\nThanks!\n", "Sure:\x1F\x7F\n");
+	 _printf("- What did you say?\n- %S\n- That's what I thought.\n", "");
     printf("\nor: %i\n", count);
     printf("cl: %i\n", _count);
 
