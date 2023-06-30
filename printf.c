@@ -36,16 +36,7 @@ int _printf(const char *format, ...)
 	{
 		f_indicator = format[i];
 		f_spec = format[i + 1];
-		if (f_indicator == '%' && (f_spec == 'c' ||
-					f_spec == 's' ||
-					f_spec == '%' ||
-					f_spec == 'i' ||
-					f_spec == 'd' ||
-					f_spec == 'b' ||
-					f_spec == 'u' ||
-					f_spec == 'o' ||
-					f_spec == 'X' ||
-					f_spec == 'x'))
+		if (f_indicator == '%' && check_spec(f_spec) == 1)
 		{
 			fun_format = get_format_func(f_spec);
 			count += fun_format(args_copy);

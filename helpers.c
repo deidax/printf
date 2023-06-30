@@ -59,6 +59,34 @@ int get_format(const char * const format)
 	return (strlen(format));
 }
 /**
+ * check_spec - Check if a character is a valid format specifier.
+ * @f_spec: The character to be checked.
+ *
+ * Description:
+ *   The check_spec function is used to determine if a given character
+ *   @f_spec is a valid format specifier for printf-like functions. It
+ *   checks if the character matches any of the supported specifiers
+ *   including 'c', 's', '%', 'i', 'd', 'b', 'u', 'o', 'X', and 'x'.
+ *
+ * Return:
+ *   Returns 1 if @f_spec is a valid format specifier, otherwise returns 0.
+ */
+int check_spec(char f_spec)
+{
+	if ((f_spec == 'c' ||
+		f_spec == 's' ||
+		f_spec == '%' ||
+		f_spec == 'i' ||
+		f_spec == 'd' ||
+		f_spec == 'b' ||
+		f_spec == 'u' ||
+		f_spec == 'o' ||
+		f_spec == 'X' ||
+		f_spec == 'x'))
+		return (1);
+	return (0);
+}
+/**
  * print_int_helper - Helper function to print an integer using putchar.
  * @n: The integer to be printed.
  *
