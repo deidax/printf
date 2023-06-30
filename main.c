@@ -7,6 +7,7 @@ int main()
 	int len;
 	int len2;
 	long int l = (long int)INT_MAX + 1024;
+	unsigned int ui = (unsigned int)INT_MAX + 1024;
 	len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
 
@@ -39,8 +40,10 @@ int main()
 	printf("%b\n", 98);
 	_printf("%b\n", 98);
 	printf("%u\n", -42);
-	printf("%u\n", (unsigned int)INT_MAX + 1024);
-	_printf("%u\n", (unsigned int)INT_MAX + 1024);
+	printf("%u\n", ui);
+	_printf("%u\n", ui);
+	printf("Unsigned octal:[%o]\n", ui);
+	_printf("Unsigned octal:[%o]\n", ui);
     printf("\nor: %i\n", count);
     printf("cl: %i\n", _count);
 
