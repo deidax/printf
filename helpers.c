@@ -15,7 +15,7 @@
 
 int (*get_format_func(char c))(va_list)
 {
-	char opt_char[] = "cs%@idbuoXx";
+	char opt_char[] = "cs%@idbuoXxS";
 	int (*opt_cmd[])(va_list) = {
 		print_char,
 		print_string,
@@ -27,7 +27,8 @@ int (*get_format_func(char c))(va_list)
 		print_unsigned_int,
 		print_unsigned_oct,
 		print_unsigned_heX,
-		print_unsigned_hex
+		print_unsigned_hex,
+		print_special
 	};
 	int i = 0;
 
@@ -82,7 +83,8 @@ int check_spec(char f_spec)
 		f_spec == 'u' ||
 		f_spec == 'o' ||
 		f_spec == 'X' ||
-		f_spec == 'x'))
+		f_spec == 'x' ||
+		f_spec == 'S'))
 		return (1);
 	return (0);
 }

@@ -93,3 +93,12 @@ int print_empty(va_list args)
 	_putchar('\0');
 	return (-1);
 }
+int print_special(va_list args)
+{
+	char v;
+	int count = 0;
+
+	v = va_arg(args, int);
+	count = print_special_helper(v);
+	return (count);
+}
